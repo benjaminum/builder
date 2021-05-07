@@ -1,0 +1,9 @@
+# goto builder root folder
+
+sudo docker run -it --ipc=host --rm -v $(pwd):/remote pytorch/manylinux-cuda110 bash
+
+# inside the container goto /remote/manywheel
+
+export DESIRED_PYTHON=3.7
+export PYTORCH_BUILD_VERSION=1.7.1
+./build.sh
