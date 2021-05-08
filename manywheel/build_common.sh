@@ -97,6 +97,9 @@ else
 fi
 git submodule update --init --recursive
 
+# add info about the NVCC flags
+echo "_TORCH_NVCC_FLAGS='$TORCH_NVCC_FLAGS'" >> torch/__init__.py
+
 export PATCHELF_BIN=/usr/local/bin/patchelf
 patchelf_version=`$PATCHELF_BIN --version`
 echo "patchelf version: " $patchelf_version
